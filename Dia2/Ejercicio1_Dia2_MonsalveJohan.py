@@ -9,3 +9,4 @@ num2= int(input("porfa ingrese el segundo numero: "))
 resultado=num1+num2
 print("el resultado de la suma es: "+str(resultado))
 
+# Desarrollado por : Johan Monsalve C.C 1097911956

@@ -18,3 +18,5 @@ else:
         print("el numero mayor es: "+str(num3))
     else:
         print("El mayor es: " +str (num2))
+
+        # Desarrollado por : Johan Monsalve C.C 1097911956

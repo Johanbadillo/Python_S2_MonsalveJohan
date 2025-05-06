@@ -19,7 +19,7 @@ nombreMenor = ""
 emple = int(input("Ingrese la cantidad de empleados: "))
 
 for i in range(1, emple+1):
-    print("ngrese el nombre del empleado: ")
+    print("Ingrese el nombre del empleado: ")
     nombre = input()
 
     print("Ingrese las horas trabajadas del empleado: ")
@@ -66,3 +66,5 @@ print("El empleado que más gana es:", nombreMayor, "con un sueldo neto de:", ma
 print("El empleado que menos gana es:", nombreMenor, "con un sueldo neto de:", menorNeto)
 print("Promedio de Sueldos Brutos:", promedioBruto)
 print("Promedio de los Sueldos Netos:", promedioNeto)
+
+# Desarrollado por : Johan Monsalve C.C 1097911956
