@@ -191,7 +191,7 @@ while(booleanito):
         eliminaUsuario=int(input("Ingrese el Id del usuario que deseas eliminar"))
         del listaRobusta[eliminaUsuario-1]
     elif(opcionUsuario==6):
-        print("Chaousssss")
+        print("Chaousssss !!!")
         booleanito=False
     else:
         print("No es una opción válida")
