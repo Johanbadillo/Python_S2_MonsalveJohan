@@ -104,12 +104,12 @@ print("")
 numeroPrimeraPersona=listaRobusta[0]["telefonos"][1]['numero']
 tipoNumeroPP=listaRobusta[0]["telefonos"][1]['tipo']
 print(str(numeroPrimeraPersona)+ tipoNumeroPP)
-
+print(" ")
 booleanito = True
 while(booleanito):
-    print("#################")
-    print("#### Librería de personas ####")
-    print("#################")
+    print("*********************************")
+    print("***** Librería de personas ******")
+    print("*********************************")
     #CRUD (CREATE , READ , UPDATE & DELETE)
     print("1. Crear Persona")
     print("2. Mostrar todas las personas")
@@ -123,7 +123,20 @@ while(booleanito):
         print("-----  Crear Persona  -------")
         print("_____________________________")
         diccionarioVacio={}
-
+        diccionarioVacio["id"] = (listaRobusta[len(listaRobusta)-1]["id"])+1,
+        diccionarioVacio["nombre"] = input("Nombre: ")
+        diccionarioVacio["apellido"] = input("Apellido: ")
+        diccionarioVacio["edad"] = int(input("Edad: "))
+        diccionarioVacio["telefonos"] = []
+        cantidadTelefonos = int(input("¿Cuántos teléfonos desea agregar?: "))
+        for i in range(cantidadTelefonos):
+            telefono = {}
+            telefono["codigo"] = int(input("Código del teléfono: "))
+            telefono["numero"] = int(input("Número del teléfono: "))
+            telefono["tipo"] = input("Tipo de teléfono (personal/trabajo): ")
+            diccionarioVacio["telefonos"].append(telefono)
+        listaRobusta.append(diccionarioVacio)
+        print("Persona creada exitosamente.")
     elif(opcionUsuario==2):
         for i in range(len(listaRobusta)):
             print("___________________________")
@@ -136,15 +149,47 @@ while(booleanito):
             
             for q in range(len(listaRobusta[i]["telefonos"])):
                 print("---------------------------")
-                print("Telefono N",q+1,":",listaRobusta[i]["telefonos"][q]["tipo"])
+                print("Telefono N.",q+1,":",listaRobusta[i]["telefonos"][q]["tipo"])
                 print("    - Código:",listaRobusta[i]["telefonos"][q]["codigo"])
                 print("    - Numero:",listaRobusta[i]["telefonos"][q]["numero"])
                 print("---------------------------")
     elif(opcionUsuario==3):
-        personaIndividual=print(int(input("Que personas quires ver")))
-        
-            
-            
+        print("_________________________________________________")
+        print("--------  Busuqeda de Persona Inidivual  --------")
+        print("_________________________________________________")
+        personaIndividual=int(input("Porfa ingresar el ID de la persona"))
+        print("ID:       ", listaRobusta[-1]["id"])
+        print("Nombre:   ",listaRobusta[-1]["nombre"])
+        print("Apellido: ",listaRobusta[-1]["apellido"])
+        print("Edad:     ",listaRobusta[-1]["edad"])
+        for q in range(len(listaRobusta[i]["telefonos"])):
+                print("---------------------------")
+                print("Telefono N",q+1,":",listaRobusta[i]["telefonos"][q]["tipo"])
+                print("    - Código:",listaRobusta[i]["telefonos"][q]["codigo"])
+                print("    - Numero:",listaRobusta[i]["telefonos"][q]["numero"])
+                print("---------------------------")
+        print("---------------------------")
+    elif(opcionUsuario==4):
+        print("____________________________________________________")
+        personaActualizar=int(str(input("Porfa ingresar el ID de la persona")))
+        datoNuevo=str((input("Ingrese el nombre de nuevo")))
+        listaRobusta[personaActualizar-1]["nombre"]=datoNuevo
+        datoNuevo=str((input("Ingrese el apellido: ")))
+        listaRobusta[personaActualizar-1]["apellido"]=datoNuevo
+        datoNuevo=int(input("Ingrese la edad: "))
+        listaRobusta[personaActualizar-1]["edad"]=datoNuevo
+        datoNuevo=str(input("Ingrese el codgio del numero: "))
+        listaRobusta[personaActualizar-1]["telefonos"][0]["codigo"]=datoNuevo
+        datoNuevo=int(input("Ingrese el numero de trabajo: "))
+        listaRobusta[personaActualizar-1]["telefonos"][0]["numero"]=datoNuevo
+        datoNuevo=str(input("Ingrese el codgio del numero: "))
+        listaRobusta[personaActualizar-1]["telefonos"][1]["codigo"]=datoNuevo
+        datoNuevo=int(input("Ingrese el numero de personal: "))
+        listaRobusta[personaActualizar-1]["telefonos"][1]["numero"]=datoNuevo
+        print("____________________________________________________")
+    elif(opcionUsuario==5):
+        eliminaUsuario=int(input("Ingrese el Id del usuario que deseas eliminar"))
+        del listaRobusta[eliminaUsuario-1]
     elif(opcionUsuario==6):
         print("Chaousssss")
         booleanito=False
