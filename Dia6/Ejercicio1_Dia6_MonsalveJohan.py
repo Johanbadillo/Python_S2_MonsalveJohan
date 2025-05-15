@@ -123,7 +123,7 @@ while(booleanito):
         print("-----  Crear Persona  -------")
         print("_____________________________")
         diccionarioVacio={}
-        diccionarioVacio["id"] = (listaRobusta[len(listaRobusta)-1]["id"])+1,
+        diccionarioVacio["id"] = listaRobusta[len(listaRobusta)-1]["id"]+1
         diccionarioVacio["nombre"] = input("Nombre: ")
         diccionarioVacio["apellido"] = input("Apellido: ")
         diccionarioVacio["edad"] = int(input("Edad: "))
@@ -178,11 +178,11 @@ while(booleanito):
         listaRobusta[personaActualizar-1]["apellido"]=datoNuevo
         datoNuevo=int(input("Ingrese la edad: "))
         listaRobusta[personaActualizar-1]["edad"]=datoNuevo
-        datoNuevo=str(input("Ingrese el codgio del numero: "))
+        datoNuevo=int(input("Ingrese el codgio del numero: "))
         listaRobusta[personaActualizar-1]["telefonos"][0]["codigo"]=datoNuevo
         datoNuevo=int(input("Ingrese el numero de trabajo: "))
         listaRobusta[personaActualizar-1]["telefonos"][0]["numero"]=datoNuevo
-        datoNuevo=str(input("Ingrese el codgio del numero: "))
+        datoNuevo=int(input("Ingrese el codgio del numero: "))
         listaRobusta[personaActualizar-1]["telefonos"][1]["codigo"]=datoNuevo
         datoNuevo=int(input("Ingrese el numero de personal: "))
         listaRobusta[personaActualizar-1]["telefonos"][1]["numero"]=datoNuevo
