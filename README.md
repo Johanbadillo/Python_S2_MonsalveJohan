@@ -31,6 +31,6 @@ python3 Python_S2_MonsalveJohan.py
 
 
 
-<p align="center">¡Disfruta de nuestro programa-!</p>
+<p align="center">¡Disfruta de nuestro programa!</p>
 
 
